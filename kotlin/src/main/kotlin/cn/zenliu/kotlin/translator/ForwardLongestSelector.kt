@@ -4,7 +4,7 @@ import org.ahocorasick.trie.*
 
 internal  val EMIT_COMPARATOR = Comparator<Emit> { o1, o2 ->
 	when {
-		o1.getStart() == o2.getStart() -> // 起点相同时，更长的排前面
+		o1.start == o2.start -> // 起点相同时，更长的排前面
 			when {
 				o1.size() < o2.size() -> 1
 				o1.size() == o2.size() -> 0
@@ -12,8 +12,8 @@ internal  val EMIT_COMPARATOR = Comparator<Emit> { o1, o2 ->
 			}
 		else -> // 起点小的放前面
 			when {
-				o1.getStart() < o2.getStart() -> -1
-				o1.getStart() == o2.getStart() -> 0
+				o1.start < o2.start -> -1
+				o1.start == o2.start -> 0
 				else -> 1
 			}
 	}
