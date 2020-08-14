@@ -1,4 +1,4 @@
 
 /.idea/
-/tinypinyin.iml
-/target/
+*.iml
+target/
